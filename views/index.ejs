@@ -1,0 +1,113 @@
+
+<%- include('partials/header.ejs') %>
+
+  <section class="random">
+    <div class="container-fluid">
+      <h2>Popular Cocktails</h2>
+
+      <p>
+        <%# data %>
+      </p>
+      <div class="random-container">
+        <form action="/random-recipe" method="POST" class="buttons">
+          <% data.forEach(recipe => { %>
+            <button 
+              class="random-recipe" 
+              type="submit" 
+              value="<%= recipe.idDrink %>" 
+              name="id">
+              <div 
+                class="random-container__img"
+                style="background-image: url('<%= recipe.strDrinkThumb %>');">
+              </div>
+              <div class="random-container__button-text">
+                <%= recipe.strDrink %>
+              </div>
+            </button>
+          <% }) %>
+        </form>
+      </div>
+      <!-- <div class="random-messaging">Pick a random recipe</div> -->
+    </div>
+  </section>
+
+  <section class="headline">
+    <div class="container-fluid flex-center">
+      <div class="row flex-center flex-column">
+        <h1>
+          Welcome to Cocktail Hour
+        </h1>
+        <div class="headline-text">
+          We have cocktail recipies for your favorite cocktails and even some new ones.
+        </div>
+        <div class="headline-text">
+          Feeling lucky? Pick a popular recipe above. Pick your favorite spirit or search below.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spirits">
+    <div class="container container-fluid flex-center">
+      <div class="spirits-container">
+        
+        <form action="/recipe" method="POST" class="buttons">
+          <button class="vodka" type="submit" name="choice" value="Vodka">
+            <div>Vodka</div>
+          </button>
+          <button class="gin" type="submit" name="choice" value="Gin">
+            <div>Gin</div>
+          </button>
+          <button class="tequila" type="submit" name="choice" value="Tequila">
+            <div>Tequila</div>
+          </button>
+          <button class="mezcal" type="submit" name="choice" value="Mezcal">
+            <div>Mezcal</div>
+          </button>
+          <button class="rum" type="submit" name="choice" value="Rum">
+            <div>Rum</div>
+          </button>
+          <button class="brandy" type="submit" name="choice" value="Brandy">
+            <div>Brandy</div>
+          </button>
+          <button class="bourbon" type="submit" name="choice" value="Bourbon">
+            <div>Bourbon</div>
+          </button>
+          <button class="cognac" type="submit" name="choice" value="Cognac">
+            <div>Cognac</div>
+          </button>
+          <button class="amaretto" type="submit" name="choice" value="Amaretto">
+            <div>Amaretto</div>
+          </button>
+          <button class="absinthe" type="submit" name="choice" value="Absinthe">
+            <div>Absinthe</div>
+          </button>
+          <button class="kahlua" type="submit" name="choice" value="Kahlua">
+            <div>Kahlua</div>
+          </button>
+          <button class="champagne" type="submit" name="choice" value="Champagne">
+            <div>Champagne</div>
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <div id="recipeContainer" class="hidden">
+
+    <!-- If no recipe yet, show: -->
+    <h2>Pick your favorite spirit</h2>
+    <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
+
+    <h3>Ingredients:</h3>
+    <ul id="ingredientsList">
+      <li>Protein name, protein preparation</li>
+      <li>Salsa name</li>
+      <li>Every other topping</li>
+    </ul>
+
+  </div>
+
+  <%- include('partials/footer.ejs') %>

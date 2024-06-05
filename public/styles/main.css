@@ -1,0 +1,226 @@
+body {
+  font-family: 'Railway', sans-serif;
+}
+
+button {
+  border: none;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-column {
+  flex-flow: column;
+  align-items: center;
+}
+
+.vodka {
+  background: url('https://www.thecocktaildb.com/images/ingredients/vodka-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.gin {
+  background: url('https://www.thecocktaildb.com/images/ingredients/gin-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.tequila {
+  background: url('https://www.thecocktaildb.com/images/ingredients/tequila-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.mezcal {
+  background: url('https://www.thecocktaildb.com/images/ingredients/mezcal-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.rum {
+  background: url('https://www.thecocktaildb.com/images/ingredients/rum-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.brandy {
+  background: url('https://www.thecocktaildb.com/images/ingredients/brandy-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.bourbon {
+  background: url('https://www.thecocktaildb.com/images/ingredients/bourbon-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.cognac {  
+  background: url('https://www.thecocktaildb.com/images/ingredients/cognac-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.amaretto {  
+  background: url('https://www.thecocktaildb.com/images/ingredients/amaretto-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.absinthe {
+  background: url('https://www.thecocktaildb.com/images/ingredients/Absinthe-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.kahlua {
+  background: url('https://www.thecocktaildb.com/images/ingredients/kahlua-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+.champagne {  background: url('https://www.thecocktaildb.com/images/ingredients/champagne-Medium.png') no-repeat;
+  background-size: 140px;
+  background-position: center 10px;
+}
+
+
+section.hero {
+  background-image: url('/images/hero_image_3006x1000.png');
+  background-position: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.hero .container-fluid {
+  align-content: center;
+}
+
+.hero .hero-text {
+  align-content: center;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+div.hero-text {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+section.headline {
+  margin-top: 25px;
+}
+
+section.random .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+section.random h2 {
+  text-align: center;
+}
+
+.random {
+  margin-top: 30px;
+}
+
+.random .random-messaging {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.random-container {
+
+  height: 250px;
+}
+
+.random-container form {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  padding: 5px 0;
+  /* border: solid darkgrey 2px;
+  background-color: #febc6a; */
+}
+
+.random-container .random-recipe {
+  width: 12.5%;
+  border: solid 1px darkgrey;
+  border-radius: 6px;
+  align-content: end;
+  text-align: center;
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.random-container button {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.random-container .random-container__img {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px 6px 0 0;
+}
+
+.random-container .random-container__button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;    
+}
+
+.spirits {
+  margin-top: 30px;
+}
+
+.spirits .spirits-container {
+  width: 750px;
+}
+
+.spirits-container form {
+}
+
+.spirits-container form button {
+  width: 30%;
+  height: 180px;
+  margin-bottom: 30px;
+  padding: 150px 30px 0 30px;
+  border: none;
+}
+
+.spirits-container form button div {
+  /* backdrop-filter: invert(50%);
+  color: #fff; */
+  font-weight: 600;
+}
+
+.spirit-search__containers form {
+  display: grid;
+  grid-auto-rows: minmax(27vw, auto);
+  column-gap: 10px;
+  row-gap: 35px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.spirit-search__containers .spirit-search__spirit {
+  font-size: 4rem;
+  font-weight: 600;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.spirit-search__containers .spirit-search__brick {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: end;
+  border-radius: 6px;
+}
+
+.spirit-search__brick .spirit-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 10px;
+}

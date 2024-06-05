@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+
+<section class="spirit-search">
+  <div class="container-fluid">
+    <div class="spirit-search__containers">
+
+      <div class="spirit-search__spirit">
+        <%= choice %>
+      </div>
+      
+      <form action="/spirit-recipe" method="POST" class="buttons">
+        <% data.forEach(cocktail => { %>
+          <button 
+            class="spirit-search__spirit-recipe" 
+            type="submit" 
+            name="id"
+            value="<%= cocktail.idDrink %>">
+            <div 
+              class="spirit-search__brick" 
+              style="background: url('<%= cocktail.strDrinkThumb %>') no-repeat; background-size: contain;">
+              <div class="spirit-name">
+                <%= cocktail.strDrink %>
+              </div>
+            </div>
+          </button>
+        <% }) %>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+
+<%- include('partials/footer.ejs') %>
