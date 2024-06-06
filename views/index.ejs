@@ -9,7 +9,7 @@
         <%# data %>
       </p>
       <div class="random-container">
-        <form action="/random-recipe" method="POST" class="buttons">
+        <form action="/view-recipe" method="POST" class="buttons">
           <% data.forEach(recipe => { %>
             <button 
               class="random-recipe" 
@@ -109,5 +109,13 @@
     </ul>
 
   </div>
+
+  <% if (locals.recipe) { %>
+    <section class="recipe-modal">
+      <h1>HELLO RECIPE!!!</h1>
+      <h1>HELLO RECIPE!!!</h1>
+      <h1>HELLO RECIPE!!!</h1>
+    </section>
+  <% } %>
 
   <%- include('partials/footer.ejs') %>

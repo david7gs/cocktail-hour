@@ -1,0 +1,61 @@
+<%- include('partials/header.ejs') %>
+
+<section class="recipe-view">
+  <div class="container-fluid flex-center">
+    <h2> <%= recipe.strDrink %> </h2>
+    <% if (recipe.strDrinkThumb) { %>
+      <div class="recipe-view__img">
+        <img src="<%= recipe.strDrinkThumb %> ">
+      </div>
+    <% } %>
+    <h3>Glass:</h3>
+    <div><%= recipe.strGlass %></div>
+    <h3>Ingredients:</h3>
+    <% if (recipe.strIngredient1) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure1 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient1 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient2) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure2 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient2 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient3) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure3 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient3 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient4) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure4 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient4 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient5) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure5 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient5 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient6) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure6 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient6 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient7) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure7 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient7 %></span>
+      </div>
+    <% } %>
+    <% if (recipe.strIngredient8) { %>
+      <div>
+        <span class="recipe-view__measure"><%= recipe.strMeasure8 %></span><span class="recipe-view__ingredient"><%= recipe.strIngredient8 %></span>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<div class="back-button">
+  <h4 onclick="history.back()">Back to previous page</h4>
+</div>
+
+<%- include('partials/footer.ejs') %>

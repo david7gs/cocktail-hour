@@ -4,14 +4,14 @@
   <div class="container-fluid">
     <div class="spirit-search__containers">
 
-      <div class="spirit-search__spirit">
+      <div class="spirit-search__spirit-name">
         <%= choice %>
       </div>
       
-      <form action="/spirit-recipe" method="POST" class="buttons">
+      <form action="/view-recipe" method="POST" class="buttons">
         <% data.forEach(cocktail => { %>
           <button 
-            class="spirit-search__spirit-recipe" 
+            class="spirit-search__spirit" 
             type="submit" 
             name="id"
             value="<%= cocktail.idDrink %>">
@@ -30,5 +30,8 @@
 
 </section>
 
+<div class="back-button">
+  <h4 onclick="history.back()">Back to previous page</h4>
+</div>
 
 <%- include('partials/footer.ejs') %>

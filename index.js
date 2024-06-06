@@ -41,76 +41,91 @@ app.get('/', async (req, res) => {
     // res.render('index.ejs', {
     //   content: JSON.stringify(error.response.data)
   }
+})
 
-  app.post('/recipe', async (req, res) => {
-    console.log(`/recipe firing`);
-    const choice = req.body.choice;
-    let result;
-    
-    try {
-      switch ( choice ) {
-        case "Vodka":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Gin":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Tequila":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Mexcal":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Rum":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Brandy":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Bourbon":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Cognac":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Ameratto":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Absinthe":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Kahlua":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        case "Champagne":
-          result = await axios.get(API_URL + '/filter.php?i=' + choice);
-          console.log(`choice is ${choice}`);
-          break;
-        default:
-          break;
-      }
-      const data = result.data.drinks;
-      console.log(`data is`, data);
-      res.render('by-spirit.ejs', { 
-        data: data,
-        choice: choice
-      })
-    } catch (error) {
+let data;
 
-    }
-  })
+app.post('/recipe', async (req, res) => {
+  console.log(`/recipe firing`);
+  const choice = req.body.choice;
+  
+  try {
+    const result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    // switch ( choice ) {
+    //   case "Vodka":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Gin":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Tequila":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Mexcal":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Rum":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Brandy":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Bourbon":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Cognac":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Ameratto":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Absinthe":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Kahlua":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   case "Champagne":
+    //     result = await axios.get(API_URL + '/filter.php?i=' + choice);
+    //     console.log(`choice is ${choice}`);
+    //     break;
+    //   default:
+    //     break;
+    // }
+    const data = result.data.drinks;
+    console.log(`data is`, data);
+    res.render('by-spirit.ejs', { 
+      data: data,
+      choice: choice
+    })
+  } catch (error) {
+    console.log(`error`, error.message);
+  // res.status(404).send(error.message);
+  }
+})
 
-
-  //res.render('index.ejs')
+app.post('/view-recipe', async (req, res) => {
+  try {
+    //console.log(`req is`, req.body.id);
+    let id = req.body.id;
+    console.log(`id is ${id}`);
+    const result = await axios.get(API_URL + '/lookup.php?i=' + id);
+    const recipe = result.data.drinks[0];
+    res.render('recipe.ejs', {
+      recipe: recipe
+    });
+  } catch (error) {
+    console.log(`error`, error.message)
+  }
 })
